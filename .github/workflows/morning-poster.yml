@@ -15,7 +15,7 @@ jobs:
             --header 'Content-Type: application/json' \
             --data '{
               "product_image": {
-                "url": "https://coze-coding-project.tos.coze.site/create_attachment/2026-04-13/1379215456601100_6cafadc7d357cf74dee83e3e24a9c4d6_%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260413201242_1058_4.jpg?sign=4898146390-7b1a3b9c53-0-be995406ad78f465bedbf6e1fd42ae2203596eda64f478619d1810cf3f6c045e",
+                "url": "https://raw.githubusercontent.com/guyuqibing/feishu-poster-scheduler/main/assets/product.jpg",
                 "file_type": "image"
               },
               "scene_type": "morning",
