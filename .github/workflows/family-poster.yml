@@ -1,6 +1,25 @@
 name: 家庭海报
 on:
   schedule:
+    - cron: '0 6 * * *'  # UTC 06:00 = 北京时间 14:00 (提前触发，应对Actions延迟)
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 发送家庭海报到飞书
+        run: |
+          curl --location --request POST 'https://qzd3mqzjdj.coze.site/run'             --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjliOWYxZTRjLWE4ZWYtNDA4Yy1iYjU2LTMwNmI5NjJhMzllMCJ9.eyJpc3MiOiJodHRwczovL2FwaS5jb3plLmNuIiwiYXVkIjpbImRJcEN4d2JkcGlodHJxZ2dYWXRsRG12ODJMTFFRWmh3Il0sImV4cCI6ODIxMDI2Njg3Njc5OSwiaWF0IjoxNzc2Njg1MzkzLCJzdWIiOiJzcGlmZmU6Ly9hcGkuY296ZS5jbi93b3JrbG9hZF9pZGVudGl0eS9pZDo3NjI4MjE1ODA4Nzc4MzA1NTc2Iiwic3JjIjoiaW5ib3VuZF9hdXRoX2FjY2Vzc190b2tlbl9pZDo3NjMwODA1NjYxNTU0NTczMzIxIn0.nU-BGOs0-LjRG4MGBY9mxarO9kr8DTtxaf1ZxjxXW5sjhyh7BmdPHrmFXfkYPsKMN8vnkdnoWVVJpi6Frn27nOApbcksu5rD0SaGBv8vWE5iz84BpqvSbFwtte9B0kBSzIWcjDvEnt-_b7FPUK-tWLoLAdR0ycMUvEPrFWVO0zT8KjnU5Qr1e04k_xj1ag8Qs1DxaK_goVzIf-f1cpApeDV64imPccLEX-5NYuS4Br5Cow0Z1r2achONdc2J3hM1lWHYA7OMGX7C8dmjgvqs0xTYEJCnS_-a5OmL_zCXk9l5vnJ7OkWkFBCE2Xgx7IBlU6X-8ZFPRhlNCWVKwHZKnw'             --header 'Content-Type: application/json'             --data '{
+              "product_image": {
+                "url": "https://coze-coding-project.tos.coze.site/create_attachment/2026-04-13/1379215456601100_6cafadc7d357cf74dee83e3e24a9c4d6_%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260413201242_1058_4.jpg?sign=4898146390-7b1a3b9c53-0-be995406ad78f465bedbf6e1fd42ae2203596eda64f478619d1810cf3f6c045e",
+                "file_type": "image"
+              },
+              "scene_type": "family",
+              "celebrity_name": ""
+            }'name: 家庭海报
+on:
+  schedule:
     - cron: '0 9 * * *'  # UTC 9:00 = 北京时间 17:00
   workflow_dispatch:
 
